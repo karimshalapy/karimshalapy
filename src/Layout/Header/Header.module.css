@@ -1,0 +1,40 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    z-index: 11;
+    padding: 0px 50px;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: var(--theme-color);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+@media (max-width: 1080px) {
+    .Header{
+        padding: 0px 40px;
+    }
+}
+@media (max-width: 768px) {
+    .Header {
+        padding: 0px 25px;
+    }
+}
+.Navbar, .Navbar ol, .Navbar .NavItemsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Navbar {
+    position: relative;
+    width: 100%;
+    color: var(--lightest-text-color);
+    font-family: var(--font-mono);
+    z-index: 12;
+}
+.ResumeButton {
+    padding: 0.75rem 1rem;
+    margin-left: 15px;
+}
