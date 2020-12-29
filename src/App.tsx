@@ -1,6 +1,7 @@
 import React from 'react';
 import About from './components/sections/About/About';
 import Hero from './components/sections/Hero/Hero';
+import Work from './components/sections/Work/Work';
 import Layout from './Layout/Layout';
 
 const App = () => (
@@ -8,6 +9,7 @@ const App = () => (
     <Layout>
       <Hero />
       <About />
+      <Work />
     </Layout>
   </div>
 )
