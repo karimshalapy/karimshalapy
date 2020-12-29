@@ -1,0 +1,25 @@
+.InlineLink {
+    color: var(--highlight-color);
+}
+.InlineLink:hover,
+.InlineLink:focus,
+.InlineLink:active {
+    outline: 0;
+}
+.InlineLink:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    position: relative;
+    bottom: 0.37em;
+    background-color: var(--highlight-color);
+    transition: var(--transition);
+    opacity: 0.5;
+}
+.InlineLink:hover:after,
+.InlineLink:focus:after,
+.InlineLink:active:after {
+    width: 100%;
+}
+
