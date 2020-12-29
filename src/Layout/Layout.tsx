@@ -10,7 +10,11 @@ const Layout: React.FC<Props> = props => {
     return (
         <>
             <Header />
-            {props.children}
+            <div id="content">
+                <main className="fillHeight">
+                    {props.children}
+                </main>
+            </div>
         </>
     )
 }
