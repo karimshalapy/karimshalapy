@@ -1,0 +1,61 @@
+.ProjectImage {
+    box-shadow: 0 10px 30px -15px var(--shadow);
+    transition: var(--transition);
+    grid-column: 6 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    z-index: 1;
+
+}
+@media (max-width: 768px) {
+    .ProjectImage {
+        grid-column: 1 / -1 !important;
+        height: 100%;
+        opacity: 0.25;
+    }
+}
+.ProjectImage img {
+    border-radius: var(--border-radius);
+    mix-blend-mode: multiply;
+    filter: grayscale(100%) contrast(1) brightness(90%);
+}
+@media (max-width: 768px) {
+    .ProjectImage img {
+        object-fit: cover;
+        width: auto;
+        filter: grayscale(100%) contrast(1) brightness(80%);
+    }
+}
+.ProjectImage a {
+    width: 100%;
+    background-color: var(--highlight-color);
+    border-radius: var(--border-radius);
+    vertical-align: middle;
+}
+.ProjectImage a:hover,
+.ProjectImage a:focus {
+  background: transparent;
+  box-shadow: 0 20px 30px -15px var(--navy-shadow);
+}
+.ProjectImage a:hover::before,
+.ProjectImage a:hover img,
+.ProjectImage a:focus::before,
+.ProjectImage a:focus img {
+    background: transparent;
+    filter: none;
+}
+
+.ProjectImage a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  transition: var(--transition);
+  background-color: var(--navy);
+  mix-blend-mode: screen;
+}
