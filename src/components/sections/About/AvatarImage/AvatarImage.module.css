@@ -1,0 +1,52 @@
+.ImageWrapper {
+    box-shadow: 0 10px 30px -15px var(--shadow);
+    transition: var(--transition);
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 50% 0;
+    border-radius: var(--border-radius);
+    background-color: var(--highlight-color);
+}
+.ImageWrapper:hover,
+.ImageWrapper:focus {
+  outline: 0;
+  box-shadow: 0 20px 30px -15px var(--shadow);
+}
+.ImageWrapper:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--highlight-color);
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+  transition: var(--transition);
+}
+.ImageWrapper:hover:after,
+.ImageWrapper:focus:after {
+    top: 15px;
+    left: 15px;
+}
+
+.ImageWrapper img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: var(--border-radius);
+    mix-blend-mode: multiply;
+    filter: grayscale(100%) contrast(1);
+    transition: var(--transition);
+}
+.ImageWrapper:hover img,
+.ImageWrapper:focus img {
+    filter: none;
+    mix-blend-mode: normal;
+}
