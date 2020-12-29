@@ -1,0 +1,15 @@
+.SkillsList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 200px));
+    margin: 20px 0 0 0;
+    overflow: hidden;
+}
+.SkillsList li {
+    padding-left: 20px;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+}
+.SkillsList li:before {
+    font-size: var(--font-size-sm);
+    line-height: 12px;
+}
