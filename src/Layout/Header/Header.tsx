@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Button from '../../components/Button'
+import Button from '../../components/Button/Button'
 import useScrollDirection from '../../hooks/useScrollDirection'
 import classes from './Header.module.css'
 import NavItems from './NavItems/NavItems'

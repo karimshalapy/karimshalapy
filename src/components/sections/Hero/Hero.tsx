@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../Button'
+import Button from '../../Button/Button'
 import Heading from '../../Heading/Heading'
 import classes from './Hero.module.css'
 
