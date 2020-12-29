@@ -12,10 +12,10 @@ const About: React.FC<Props> = props => {
     return (
         <section id="About">
             <Heading variant="h2" size="numbered">About Me</Heading>
-            <div className={classes.AboutContentWrapper}>
+            <article className={classes.AboutContentWrapper}>
                 <AboutMeContent />
                 <AvatarImage />
-            </div>
+            </article>
         </section>
     )
 }
