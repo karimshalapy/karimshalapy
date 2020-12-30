@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './Header/Header'
+import SideLinks from './SideLinks/SideLinks'
 
 interface Props {
 
@@ -10,8 +11,10 @@ const Layout: React.FC<Props> = props => {
     return (
         <>
             <Header />
+            <SideLinks isLeft />
+            <SideLinks />
             <div id="content">
-                <main className="fillHeight">
+                <main className="fillHeight" style={{ counterReset: "section 0" }}>
                     {props.children}
                 </main>
             </div>
