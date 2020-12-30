@@ -155,7 +155,8 @@ a {
   cursor: pointer;
 }
 a:hover,
-a:focus {
+a:focus,
+.active {
   color: var(--highlight-color);
 }
 

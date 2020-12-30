@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './NavItems.module.css'
+import { Link, animateScroll as scroll } from 'react-scroll'
 
 interface Props {
 
@@ -12,7 +13,12 @@ const NavItems: React.FC<Props> = props => {
                 ["About", "Work", "Contact"]
                     .map(item => (
                         <li key={item} className={classes.NavListItem}>
-                            <a href={`#${item}`} className={classes.NavLink}>{item}</a>
+                            <Link
+                                to={item}
+                                smooth={true}
+                                className={classes.NavLink}
+                                isDynamic={true}
+                            >{item}</Link>
                         </li>
                     ))
             }
