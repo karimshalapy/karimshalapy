@@ -16,8 +16,7 @@ const KEY_CODES = {
 export const useFocusTrap = (
     buttonRef: React.RefObject<HTMLButtonElement>,
     navRef: React.RefObject<HTMLElement>,
-    open: boolean,
-    toggle: () => void) => {
+    close: () => void) => {
 
     let menuFocusables: HTMLElement[]
     let firstFocusableEl: HTMLElement
@@ -47,7 +46,7 @@ export const useFocusTrap = (
         switch (e.key) {
             case KEY_CODES.ESCAPE:
             case KEY_CODES.ESCAPE_IE11: {
-                if (open) toggle()
+                close()
                 break
             }
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import classes from './HamburgerButton.module.css'
 
 interface Props {
@@ -6,14 +6,14 @@ interface Props {
     toggle: () => void
 }
 
-const HamburgerButton: React.FC<Props> = props => {
+const HamburgerButton = forwardRef<HTMLButtonElement, Props>((props, nodeRef) => {
     return (
-        <button className={classes.HamburgerButton} onClick={props.toggle}>
+        <button className={classes.HamburgerButton} onClick={props.toggle} ref={nodeRef}>
             <div className={`${classes.HamburgerBox} ${props.open ? classes.Open : ""}`}>
                 <div className={`${classes.HamburgerInner} ${props.open ? classes.Open : ""}`}></div>
             </div>
         </button>
     )
-}
+})
 
 export default HamburgerButton

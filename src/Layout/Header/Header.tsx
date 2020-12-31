@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Backdrop from '../../components/Backdrop/Backdrop'
 import Button from '../../components/Button/Button'
 import useScrollDirection from '../../hooks/useScrollDirection'
@@ -15,6 +15,7 @@ const Header: React.FC<Props> = props => {
     const scrollDirection = useScrollDirection({ initialDirection: "down" })
     const [scrolledToTop, setScrolledToTop] = useState(true)
     const [sideMenuOpen, setSideMenuOpen] = useState(false)
+    const buttonRef = useRef<HTMLButtonElement>(null)
 
     const handleScroll = () => {
         setScrolledToTop(window.pageYOffset < 50)
@@ -36,6 +37,26 @@ const Header: React.FC<Props> = props => {
         setSideMenuOpen(prev => !prev)
         document.body.classList.toggle("blur")
     }
+    //closing side menu
+    const closeSideMenu = () => {
+        setSideMenuOpen(false)
+        document.body.classList.remove("blur")
+    }
+    //on window resize handler to close the side menu if open when the size of the window is bigger than 768 (mobile version to desktop)
+    const onResize = (e: UIEvent) => {
+        const target = e.currentTarget as Window
+        if (target.innerWidth > 768) {
+            closeSideMenu()
+        }
+    }
+    //useEffect to set the event listener for window resize and remove it on unmount
+    useEffect(() => {
+        window.addEventListener('resize', onResize)
+        return () => {
+            window.removeEventListener('resize', onResize)
+        }
+        // eslint-disable-next-line
+    }, [])
 
     return (
         <>
@@ -46,11 +67,11 @@ const Header: React.FC<Props> = props => {
                         <NavItems />
                         <Button customClass={classes.ResumeButton} link="/Karim Shalapy_Front-end.pdf">Resume</Button>
                     </div>
-                    <HamburgerButton open={sideMenuOpen} toggle={toggleSideMenu} />
+                    <HamburgerButton open={sideMenuOpen} toggle={toggleSideMenu} ref={buttonRef} />
                 </nav>
-                <SideMenu open={sideMenuOpen} />
+                <SideMenu open={sideMenuOpen} close={closeSideMenu} buttonRef={buttonRef} />
             </header>
-            <Backdrop open={sideMenuOpen} toggle={toggleSideMenu} />
+            <Backdrop open={sideMenuOpen} toggle={closeSideMenu} />
         </>
     )
 }
