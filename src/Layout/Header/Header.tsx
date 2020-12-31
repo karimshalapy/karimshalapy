@@ -5,6 +5,7 @@ import useScrollDirection from '../../hooks/useScrollDirection'
 import HamburgerButton from './HamburgerButton/HamburgerButton'
 import classes from './Header.module.css'
 import NavItems from './NavItems/NavItems'
+import SideMenu from './SideMenu/SideMenu'
 
 interface Props {
 
@@ -47,6 +48,7 @@ const Header: React.FC<Props> = props => {
                     </div>
                     <HamburgerButton open={sideMenuOpen} toggle={toggleSideMenu} />
                 </nav>
+                <SideMenu open={sideMenuOpen} />
             </header>
             <Backdrop open={sideMenuOpen} toggle={toggleSideMenu} />
         </>

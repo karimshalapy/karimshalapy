@@ -1,0 +1,59 @@
+.SideMenu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .SideMenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding: 50px 10px;
+        width: min(75vw, 400px);
+        height: 100vh;
+        outline: 0;
+        background-color: var(--light-theme-color);
+        box-shadow: -10px 0px 30px -15px var(--shadow);
+        z-index: 9;
+        transform: translateX(100vw);
+        visibility: hidden;
+        transition: var(--transition);
+    }
+    .SideMenu.Open {
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+.SideMenu nav {
+    width: 100%;
+    text-align: center;
+    font-family: var(--font-mono);
+    color: var(--lightest-text-color);
+}
+.SideMenu ol {
+    flex-direction: column;
+}
+.SideMenu ol li {
+    position: relative;
+    margin: 0px auto 20px;
+    font-size: clamp(var(--font-size-sm),4vw,var(--font-size-lg));
+}
+.SideMenu ol li a {
+    width: 100%;
+    padding: 3px 20px 20px;
+}
+.SideMenu ol li a::before {
+    display: block;
+    text-align: center;
+    margin: 0 0 5px;
+    font-size: var(--font-size-sm);
+}
+.SideMenu nav > a {
+    font-size: var(--font-size-sm);
+    padding: 18px 50px;
+    margin: 10% auto 0px;
+    width: max-content;
+}
