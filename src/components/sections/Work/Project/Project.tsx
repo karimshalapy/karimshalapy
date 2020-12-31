@@ -10,7 +10,7 @@ interface Props {
 
 const Project: React.FC<Props> = props => {
     return (
-        <article className={classes.Project}>
+        <article className={`${classes.Project} fade-up`}>
             <ProjectContent
                 projectContentClassName={classes.ProjectContent}
                 projectTechListClassName={classes.ProjectTechList}

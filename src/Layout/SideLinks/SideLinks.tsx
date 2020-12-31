@@ -12,7 +12,7 @@ interface Props {
 
 const SideLinks: React.FC<Props> = props => {
     return (
-        <div className={`${classes.SideLinks} ${props.isLeft ? classes.Left : ""}`}>
+        <div className={`${classes.SideLinks} ${props.isLeft ? classes.Left : ""} fade-delayed`}>
             {
                 props.isLeft
                     ?

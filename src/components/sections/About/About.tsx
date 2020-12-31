@@ -10,7 +10,7 @@ interface Props {
 
 const About: React.FC<Props> = props => {
     return (
-        <section id="About">
+        <section id="About" className="fade-up">
             <Heading variant="h2" size="numbered">About Me</Heading>
             <article className={classes.AboutContentWrapper}>
                 <AboutMeContent />

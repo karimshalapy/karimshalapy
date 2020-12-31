@@ -8,11 +8,13 @@ interface Props {
 
 const HamburgerButton = forwardRef<HTMLButtonElement, Props>((props, nodeRef) => {
     return (
-        <button className={classes.HamburgerButton} onClick={props.toggle} ref={nodeRef}>
-            <div className={`${classes.HamburgerBox} ${props.open ? classes.Open : ""}`}>
-                <div className={`${classes.HamburgerInner} ${props.open ? classes.Open : ""}`}></div>
-            </div>
-        </button>
+        <div className={`${classes.HamburgerButtonContainer} fade`}>
+            <button className={classes.HamburgerButton} onClick={props.toggle} ref={nodeRef}>
+                <div className={`${classes.HamburgerBox} ${props.open ? classes.Open : ""}`}>
+                    <div className={`${classes.HamburgerInner} ${props.open ? classes.Open : ""}`}></div>
+                </div>
+            </button>
+        </div>
     )
 })
 

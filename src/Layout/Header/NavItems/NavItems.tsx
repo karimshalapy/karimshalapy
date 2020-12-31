@@ -3,7 +3,8 @@ import classes from './NavItems.module.css'
 import { Link } from 'react-scroll'
 
 interface Props {
-    closeSideMenu?: () => void
+    closeSideMenu: () => void,
+    isInSideMenu?: boolean
 }
 
 const NavItems: React.FC<Props> = props => {
@@ -12,7 +13,7 @@ const NavItems: React.FC<Props> = props => {
             {
                 ["About", "Work", "Contact"]
                     .map(item => (
-                        <li key={item} className={classes.NavListItem}>
+                        <li key={item} className={`${classes.NavListItem} ${!props.isInSideMenu ? "fade-down" : ""}`}>
                             <Link
                                 to={item}
                                 smooth={true}
@@ -21,7 +22,7 @@ const NavItems: React.FC<Props> = props => {
                                 tabIndex={0}
                                 href={`#${item}`}
                                 onClick={() => {
-                                    if (props.closeSideMenu) props.closeSideMenu()
+                                    props.closeSideMenu()
                                     setTimeout(() => { window.location.hash = item }, 0)
                                 }}
                             >{item}</Link>

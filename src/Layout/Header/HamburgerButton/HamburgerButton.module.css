@@ -1,9 +1,10 @@
-.HamburgerButton {
+.HamburgerButton, .HamburgerButtonContainer {
     display: none;
 
 }
 
 @media (max-width: 768px) {
+    .HamburgerButtonContainer { display: block; }
     .HamburgerButton {
         display: flex;
         justify-content: center;

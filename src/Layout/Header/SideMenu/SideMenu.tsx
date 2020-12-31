@@ -16,7 +16,7 @@ const SideMenu: React.FC<Props> = props => {
     return (
         <aside className={`${classes.SideMenu} ${props.open ? classes.Open : ""}`}>
             <nav ref={navRef}>
-                <NavItems closeSideMenu={props.close} />
+                <NavItems closeSideMenu={props.close} isInSideMenu />
                 <Button customClass={classes.ResumeButton} link="/Karim Shalapy_Front-end.pdf">Resume</Button>
             </nav>
         </aside>

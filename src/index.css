@@ -211,3 +211,11 @@ code {
     monospace;
     font-size: var(--font-size-md);
 }
+
+.fade,
+.fade-up,
+.fade-up-delayed,
+.fade-down,
+.fade-delayed {
+  visibility: hidden;
+}

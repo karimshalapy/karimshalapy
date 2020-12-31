@@ -62,10 +62,14 @@ const Header: React.FC<Props> = props => {
         <>
             <header className={headerClasses}>
                 <nav className={classes.Navbar}>
-                    <p>K</p>
+                    <div className="fade">
+                        <p>K</p>
+                    </div>
                     <div className={classes.NavItemsContainer}>
-                        <NavItems />
-                        <Button customClass={classes.ResumeButton} link="/Karim Shalapy_Front-end.pdf">Resume</Button>
+                        <NavItems closeSideMenu={closeSideMenu} />
+                        <div className="fade-down">
+                            <Button customClass={classes.ResumeButton} link="/Karim Shalapy_Front-end.pdf">Resume</Button>
+                        </div>
                     </div>
                     <HamburgerButton open={sideMenuOpen} toggle={toggleSideMenu} ref={buttonRef} />
                 </nav>
