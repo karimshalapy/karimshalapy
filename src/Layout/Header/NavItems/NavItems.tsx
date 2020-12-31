@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './NavItems.module.css'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link } from 'react-scroll'
 
 interface Props {
 
