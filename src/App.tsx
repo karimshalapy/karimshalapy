@@ -8,9 +8,11 @@ import ScrollReveal from 'scrollreveal'
 import { animateScroll as Scroll, scroller, Events } from 'react-scroll'
 import MainContext from './MainContext'
 import { IProjectData } from './@types/Work';
+import Loader from './components/Loader/Loader';
 
 const App = () => {
   const [data, setData] = useState<IProjectData[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
   const setUpScrollReveal = () => {
     ScrollReveal().reveal(".fade-down", { interval: 50, origin: "top", distance: "10px", easing: "ease-in" })
@@ -44,18 +46,28 @@ const App = () => {
   }
   useEffect(() => {
     fetchData()
+  }, [])
+
+  useEffect(() => {
     setUpScrollReveal()
     setUpScrollToHash()
-  }, [])
+  }, [isLoading])
+
   return (
     <div className="App">
       <MainContext.Provider value={{ projects: data }}>
-        <Layout>
-          <Hero />
-          <About />
-          <Work />
-          <Contact />
-        </Layout>
+        {
+          isLoading
+            ?
+            <Loader finishAnimating={() => { setIsLoading(false) }} />
+            :
+            <Layout>
+              <Hero />
+              <About />
+              <Work />
+              <Contact />
+            </Layout>
+        }
       </MainContext.Provider>
     </div>
   )
