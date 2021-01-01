@@ -1,0 +1,7 @@
+#k{
+    fill: var(--highlight-color);
+}
+#square {
+    stroke-width: 5;
+    stroke: var(--highlight-color);
+}

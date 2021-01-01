@@ -3,9 +3,11 @@ import Backdrop from '../../components/Backdrop/Backdrop'
 import Button from '../../components/Button/Button'
 import useScrollDirection from '../../hooks/useScrollDirection'
 import HamburgerButton from './HamburgerButton/HamburgerButton'
-import classes from './Header.module.css'
 import NavItems from './NavItems/NavItems'
 import SideMenu from './SideMenu/SideMenu'
+import { ReactComponent as Logo } from '../../assets/icons/Logo.svg'
+import classes from './Header.module.css'
+import './Logo.css'
 
 interface Props {
 
@@ -63,7 +65,9 @@ const Header: React.FC<Props> = props => {
             <header className={headerClasses}>
                 <nav className={classes.Navbar}>
                     <div className="fade">
-                        <p>K</p>
+                        <a href="/" aria-label="home" className={classes.LogoLink}>
+                            <Logo />
+                        </a>
                     </div>
                     <div className={classes.NavItemsContainer}>
                         <NavItems closeSideMenu={closeSideMenu} />
