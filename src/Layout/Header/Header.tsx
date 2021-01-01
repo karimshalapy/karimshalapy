@@ -64,6 +64,8 @@ const Header: React.FC<Props> = props => {
         <>
             <header className={headerClasses}>
                 <nav className={classes.Navbar}>
+                    <a href="#content" className={classes.SkipToContent}>Skip to Content</a>
+
                     <div className="fade">
                         <a href="/" aria-label="home" className={classes.LogoLink}>
                             <Logo />
