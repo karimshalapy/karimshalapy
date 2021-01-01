@@ -31,8 +31,8 @@ const ProjectContent: React.FC<Props> = props => {
                 }
             </ul>
             <div className={`${props.projectLinksClassName} ${classes.ProjectLinks}`}>
-                <a href={props.projectContentData.projectLinks.github} target="_blank" rel="noreferrer"><Github /></a>
-                <a href={props.projectContentData.projectLinks.live} target="_blank" rel="noreferrer" className={classes.External}><External /></a>
+                <a aria-label={`${props.projectContentData.title} live link`} href={props.projectContentData.projectLinks.github} target="_blank" rel="noreferrer"><Github /></a>
+                <a aria-label={`${props.projectContentData.title} github repo`} href={props.projectContentData.projectLinks.live} target="_blank" rel="noreferrer" className={classes.External}><External /></a>
             </div>
         </div>
     )
