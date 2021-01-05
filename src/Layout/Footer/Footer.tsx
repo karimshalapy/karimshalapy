@@ -8,7 +8,7 @@ interface Props {
 
 const Footer: React.FC<Props> = props => {
     return (
-        <footer className={classes.Footer}>
+        <footer className={`${classes.Footer} fade-up`}>
             <SideLinks isLeft isFooter />
         </footer>
     )

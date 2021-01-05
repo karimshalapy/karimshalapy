@@ -12,7 +12,7 @@ const Contact: React.FC<Props> = props => {
         <section id="Contact" className={`${classes.Contact} fade-up`}>
             <Heading variant="h2" size="numbered">What’s Next?</Heading>
             <Heading variant="h3" size="normal">Get In Touch</Heading>
-            <p>Im currently looking for any new opportunities to put my skills to a good use and develop them even further, my inbox is always open.<br /> Whether you're interested in recruiting me, have a question, or just want to say hi, I'll get back to you ASAP!</p>
+            <p>I'm currently looking for any new opportunities to put my skills to good use and develop them even further, my inbox is always open.<br />Whether you're interested in recruiting me, have a question, or just want to say hi, I'll get back to you ASAP!</p>
             <Button link="mailto:karimshalapy@gmail.com">Say Hello</Button>
         </section>
     )
