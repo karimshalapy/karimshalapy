@@ -1,0 +1,33 @@
+.Footer {
+    text-align: center; 
+    height: auto;
+    min-height: 70px;
+    padding: 15px;
+}
+.Footer > div{
+    display: block;
+    width: auto;
+    position: unset;
+}
+@media (min-width: 768px) {
+    .Footer,
+    .Footer > div {
+        display: none;
+    }
+}
+.Footer ul {
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+.Footer ul li {
+    margin-right: 20px;
+}
+.Footer ul li:last-of-type {
+    margin-bottom: 0;
+    margin-right: 0;
+}
+.Footer > div::after {
+    content: none;
+}

@@ -8,11 +8,12 @@ import { ReactComponent as Codepen } from '../../assets/icons/codepen.svg'
 
 interface Props {
     isLeft?: boolean
+    isFooter?: boolean
 }
 
 const SideLinks: React.FC<Props> = props => {
     return (
-        <div className={`${classes.SideLinks} ${props.isLeft ? classes.Left : ""} fade-delayed`}>
+        <div className={`${classes.SideLinks} ${props.isLeft ? classes.Left : ""} ${!props.isFooter ? "fade-delayed" : ""}`}>
             {
                 props.isLeft
                     ?

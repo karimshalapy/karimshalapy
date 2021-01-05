@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer/Footer'
 import Header from './Header/Header'
 import SideLinks from './SideLinks/SideLinks'
 
@@ -18,6 +19,7 @@ const Layout: React.FC<Props> = props => {
                     {props.children}
                 </main>
             </div>
+            <Footer />
         </>
     )
 }
