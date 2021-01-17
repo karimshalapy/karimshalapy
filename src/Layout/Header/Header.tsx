@@ -5,7 +5,7 @@ import useScrollDirection from '../../hooks/useScrollDirection'
 import HamburgerButton from './HamburgerButton/HamburgerButton'
 import NavItems from './NavItems/NavItems'
 import SideMenu from './SideMenu/SideMenu'
-import { ReactComponent as Logo } from '../../assets/icons/Logo.svg'
+import { Logo } from '../../assets/icons'
 import classes from './Header.module.css'
 import './Logo.css'
 

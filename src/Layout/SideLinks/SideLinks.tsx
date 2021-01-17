@@ -1,10 +1,6 @@
 import React from 'react'
 import classes from './SideLinks.module.css'
-import { ReactComponent as Github } from '../../assets/icons/github.svg'
-import { ReactComponent as Linkedin } from '../../assets/icons/linkedin.svg'
-import { ReactComponent as Hackerrank } from '../../assets/icons/hackerrank.svg'
-import { ReactComponent as Twitter } from '../../assets/icons/twitter.svg'
-import { ReactComponent as Codepen } from '../../assets/icons/codepen.svg'
+import { Github, Linkedin, Hackerrank, Twitter, Codepen } from '../../assets/icons'
 
 interface Props {
     isLeft?: boolean

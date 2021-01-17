@@ -1,8 +1,7 @@
 import React from 'react'
 import { IProjectContent } from '../../../../../@types/Work'
 import classes from './ProjectContent.module.css'
-import { ReactComponent as Github } from '../../../../../assets/icons/github.svg'
-import { ReactComponent as External } from '../../../../../assets/icons/external.svg'
+import { Github, External } from '../../../../../assets/icons'
 
 interface Props {
     projectContentClassName: string,

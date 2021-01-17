@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ReactComponent as Logo } from '../../assets/icons/Logo.svg'
+import { Logo } from '../../assets/icons'
 import animate from './animeConfig'
 import classes from './Loader.module.css'
 import './Loader.css'
