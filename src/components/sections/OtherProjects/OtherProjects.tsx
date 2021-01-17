@@ -8,58 +8,72 @@ import ProjectCard from './ProjectCard/ProjectCard'
 interface Props {
 
 }
-const otherProjectsDummyData = Array.from({ length: 7 }, () => (
-    {
-        overline: "Personal Project",
-        title: "Slippers This is an E-commerce website that replicates the design of a famous E-commerce store ",
-        description: "that's fully responsive on all screen sizes. It has a Nav bar with dropdown menus that shift to a side nav on smaller screens, Home page that has different sliders and a dismantling figure with subtle animations, ",
-        techList: [
-            "TypeScript",
-            "React",
-            "Firebase"
-        ],
-        projectLinks: {
-            "github": "https://github.com/karimshalapy/slippers-react",
-            "live": "https://slippers-react.web.app/"
-        }
-    }
-))
-otherProjectsDummyData.push({
-    overline: "Personal Project",
-    title: "Slippers This is an E-commerce website that replicates the design of a famous E-commerce store ",
-    description: "that's fully responsive on all screen sizes. It has a Nav bar with dropdown menus that shift to a side nav on smaller screens, Home page that has different sliders and a dismantling figure with subtle animations, that's fully responsive on all screen sizes. It has a Nav bar with dropdown menus that shift to a side nav on smaller screens, Home page that has different sliders and a dismantling figure with subtle animations, that's fully responsive on all screen sizes. It has a Nav bar with dropdown menus that shift to a side nav on smaller screens, Home page that has different sliders and a dismantling figure with subtle animations, ",
-    techList: [
-        "TypeScript",
-        "React",
-        "Firebase"
-    ],
-    projectLinks: {
-        "github": "https://github.com/karimshalapy/slippers-react",
-        "live": "https://slippers-react.web.app/"
-    }
-})
+// const otherProjectsDummyData = [
+//     {
+//         overline: "Personal Project",
+//         title: "Natours — Exciting tours for adventurous people",
+//         description: "A landing page built with legacy float grid system, in it I utilize a lot of advanced SCSS features. It has a Modal, and a Sidebar all done with CSS not one line of JavaScript ",
+//         techList: [
+//             "HTML",
+//             "S(CSS)",
+//             "Node"
+//         ],
+//         projectLinks: {
+//             "github": "",
+//             "live": "https://karimshalapy.github.io/natours"
+//         }
+//     },
+//     {
+//         overline: "Personal Project",
+//         title: "Trillo — Your all-in-one booking app",
+//         description: "A simple application web page built to utilize the advanced CSS flexbox features",
+//         techList: [
+//             "HTML",
+//             "S(CSS)",
+//             "Node"
+//         ],
+//         projectLinks: {
+//             "github": "",
+//             "live": "https://karimshalapy.github.io/trillo"
+//         }
+//     },
+//     {
+//         overline: "Personal Project",
+//         title: "Nexter — your home, your freedom",
+//         description: "A landing web page built with modern CSS grid system. This webpage has almost all the features of CSS grid utilized in it in addition to not position any item in it absolutely.",
+//         techList: [
+//             "HTML",
+//             "S(CSS)",
+//             "Node"
+//         ],
+//         projectLinks: {
+//             "github": "",
+//             "live": "https://karimshalapy.github.io/nexter/"
+//         }
+//     },
+// ]
 const OtherProjects: React.FC<Props> = props => {
     const GRID_LIMIT = 6;
-    // const { otherProjects } = useContext(MainContext)
+    const { otherProjects } = useContext(MainContext)
     const [showMore, setShowMore] = useState(false)
     const renderDataMapCallback = (item: IProjectContent) => (
-        <ProjectCard key={item.title} projectData={item} />
+        <ProjectCard key={item.title} projectData={item} showMore={showMore} />
     )
     return (
         <section className={classes.OtherProjects}>
-            <h2 className={classes.OtherProjectsHeading}>Other Noteworthy Projects</h2>
+            <h2 className={`${classes.OtherProjectsHeading} fade-up`}>Other Noteworthy Projects</h2>
             <div className={classes.OtherProjectsGrid}>
                 {
                     showMore
                         ?
-                        otherProjectsDummyData.map(renderDataMapCallback)
+                        otherProjects.map(renderDataMapCallback)
                         :
-                        otherProjectsDummyData.slice(0, GRID_LIMIT).map(renderDataMapCallback)
+                        otherProjects.slice(0, GRID_LIMIT).map(renderDataMapCallback)
                 }
             </div>
             {
-                otherProjectsDummyData.length > GRID_LIMIT
-                    ? <Button customClass={classes.ShowMoreBtn} clickHandler={() => { setShowMore(prev => !prev) }}>{showMore ? "Show Less" : "Show More"}</Button>
+                otherProjects.length > GRID_LIMIT
+                    ? <Button customClass={`${classes.ShowMoreBtn} fade-up`} clickHandler={() => { setShowMore(prev => !prev) }}>{showMore ? "Show Less" : "Show More"}</Button>
                     : null
             }
         </section>
