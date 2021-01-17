@@ -16,3 +16,7 @@ export interface IProjectData {
     projectContent: IProjectContent,
     projectImage: IProjectImage
 }
+export interface IAllProjectsData {
+    projects: IProjectData[],
+    otherProjects: IProjectContent[]
+}

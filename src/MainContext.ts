@@ -1,7 +1,8 @@
 import { createContext } from 'react'
-import { IProjectData } from './@types/Work'
+import { IAllProjectsData } from './@types/Work'
 
-export const MainContext = createContext<{ projects: IProjectData[] }>({
-    projects: []
+export const MainContext = createContext<IAllProjectsData>({
+    projects: [],
+    otherProjects: [],
 })
 export default MainContext
