@@ -1,0 +1,28 @@
+.MonoTextList {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    margin: 25px 0 10px;
+    padding: 0;
+    list-style: none;
+  }
+  .MonoTextList li {
+    margin: 0 20px 5px 0;
+    color: var(--light-text-color);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    white-space: nowrap;
+    padding: 0;
+  }
+  .MonoTextList li::before {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .MonoTextList { margin: 10px 0; }
+  
+    .MonoTextList li {
+      margin: 0 10px 5px 0;
+      color: var(--lightest-text-color);
+    }
+  }

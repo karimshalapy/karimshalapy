@@ -62,35 +62,6 @@
   }
 }
 /********************************/
-.ProjectTechList {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
-  margin: 25px 0 10px;
-  padding: 0;
-  list-style: none;
-}
-.ProjectTechList li {
-  margin: 0 20px 5px 0;
-  color: var(--light-text-color);
-  font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
-  white-space: nowrap;
-  padding: 0;
-}
-.ProjectTechList li::before {
-  display: none;
-}
-@media (max-width: 768px) {
-  .ProjectTechList { margin: 10px 0; }
-
-  .ProjectTechList li {
-    margin: 0 10px 5px 0;
-    color: var(--lightest-text-color);
-  }
-}
-/********************************/
 .ProjectLinks {
   display: flex;
   align-items: center;

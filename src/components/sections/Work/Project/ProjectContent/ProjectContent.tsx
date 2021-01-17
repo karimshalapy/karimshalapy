@@ -2,6 +2,7 @@ import React from 'react'
 import { IProjectContent } from '../../../../../@types/Work'
 import classes from './ProjectContent.module.css'
 import IconLink from '../../../../IconLink/IconLink'
+import MonoTextList from '../../../../MonoTextList/MonoTextList'
 
 interface Props {
     projectContentClassName: string,
@@ -22,13 +23,7 @@ const ProjectContent: React.FC<Props> = props => {
             <p className={classes.ProjectDescription}>
                 {props.projectContentData.description}
             </p>
-            <ul className={`${props.projectTechListClassName} ${classes.ProjectTechList}`}>
-                {
-                    props.projectContentData.techList.map(item => (
-                        <li key={item}>{item}</li>
-                    ))
-                }
-            </ul>
+            <MonoTextList data={props.projectContentData.techList} className={props.projectTechListClassName} />
             <div className={`${props.projectLinksClassName} ${classes.ProjectLinks}`}>
                 <IconLink
                     aria-label={`${props.projectContentData.title} github repo`}
