@@ -1,10 +1,18 @@
 import React from 'react'
 import classes from './SideLinks.module.css'
-import { Github, Linkedin, Hackerrank, Twitter, Codepen } from '../../assets/icons'
+import IconLink from '../../components/IconLink/IconLink'
+import { iconTypes } from '../../assets/icons'
 
 interface Props {
     isLeft?: boolean
     isFooter?: boolean
+}
+const socialLinksData: { [key in iconTypes]?: string } = {
+    Github: "https://github.com/karimshalapy",
+    Linkedin: "https://www.linkedin.com/in/karimshalapy/",
+    Hackerrank: "https://www.hackerrank.com/karimshalapy",
+    Twitter: "https://twitter.com/KarimShalapy",
+    Codepen: "https://codepen.io/karimshalapy",
 }
 
 const SideLinks: React.FC<Props> = props => {
@@ -14,11 +22,17 @@ const SideLinks: React.FC<Props> = props => {
                 props.isLeft
                     ?
                     <ul>
-                        <li><a aria-label="karim's github profile" href="https://github.com/karimshalapy" target="_blank" rel="noreferrer"><Github /></a></li>
-                        <li><a aria-label="karim's linkedin profile" href="https://www.linkedin.com/in/karimshalapy/" target="_blank" rel="noreferrer"><Linkedin /></a></li>
-                        <li><a aria-label="karim's hackerrank profile" href="https://www.hackerrank.com/karimshalapy" target="_blank" rel="noreferrer"><Hackerrank /></a></li>
-                        <li><a aria-label="karim's twitter profile" href="https://twitter.com/KarimShalapy" target="_blank" rel="noreferrer"><Twitter /></a></li>
-                        <li><a aria-label="karim's codepen profile" href="https://codepen.io/karimshalapy" target="_blank" rel="noreferrer"><Codepen /></a></li>
+                        {
+                            Object.entries(socialLinksData).map(([key, value]) => (
+                                <li key={key}>
+                                    <IconLink
+                                        aria-label={`karim's ${key} profile`}
+                                        iconType={key as iconTypes}
+                                        href={value!}
+                                    />
+                                </li>
+                            ))
+                        }
                     </ul>
                     :
                     <a aria-label="" href="mailto:karimshalapy@gmail.com">karimshalapy@gmail.com</a>

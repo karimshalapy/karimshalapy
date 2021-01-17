@@ -1,7 +1,7 @@
 import React from 'react'
 import { IProjectContent } from '../../../../../@types/Work'
 import classes from './ProjectContent.module.css'
-import { Github, External } from '../../../../../assets/icons'
+import IconLink from '../../../../IconLink/IconLink'
 
 interface Props {
     projectContentClassName: string,
@@ -30,8 +30,16 @@ const ProjectContent: React.FC<Props> = props => {
                 }
             </ul>
             <div className={`${props.projectLinksClassName} ${classes.ProjectLinks}`}>
-                <a aria-label={`${props.projectContentData.title} live link`} href={props.projectContentData.projectLinks.github} target="_blank" rel="noreferrer"><Github /></a>
-                <a aria-label={`${props.projectContentData.title} github repo`} href={props.projectContentData.projectLinks.live} target="_blank" rel="noreferrer" className={classes.External}><External /></a>
+                <IconLink
+                    aria-label={`${props.projectContentData.title} github repo`}
+                    href={props.projectContentData.projectLinks.github}
+                    iconType="Github"
+                />
+                <IconLink
+                    aria-label={`${props.projectContentData.title} live link`}
+                    href={props.projectContentData.projectLinks.live}
+                    iconType="External"
+                />
             </div>
         </div>
     )

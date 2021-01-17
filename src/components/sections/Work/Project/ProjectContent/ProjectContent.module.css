@@ -99,19 +99,3 @@
   margin-left: -10px;
   color: var(--lightest-text-color);
 }
-.ProjectLinks a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-.ProjectLinks a svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-}
-.ProjectLinks a.External svg  {
-    width: 22px;
-    height: 22px;
-    margin-top: -4px;
-}
