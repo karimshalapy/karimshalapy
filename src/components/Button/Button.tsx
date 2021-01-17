@@ -3,7 +3,8 @@ import classes from './Button.module.css'
 
 interface Props {
     link?: string
-    customClass?: string
+    customClass?: string,
+    clickHandler?: (e: React.MouseEvent) => void
 }
 
 const Button: React.FC<Props> = props => {
@@ -11,11 +12,11 @@ const Button: React.FC<Props> = props => {
     return (
         !props.link
             ?
-            <button className={classeNames}>
+            <button className={classeNames} onClick={props.clickHandler}>
                 {props.children}
             </button>
             :
-            <a href={props.link} className={classeNames} target="_blank" rel="noreferrer">
+            <a href={props.link} className={classeNames} onClick={props.clickHandler} target="_blank" rel="noreferrer">
                 {props.children}
             </a>
     )
