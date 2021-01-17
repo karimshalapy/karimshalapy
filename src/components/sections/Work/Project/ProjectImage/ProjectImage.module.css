@@ -12,6 +12,7 @@
         grid-column: 1 / -1 !important;
         height: 100%;
         opacity: 0.25;
+        display: flex;
     }
 }
 .ProjectImage img {
@@ -22,7 +23,8 @@
 @media (max-width: 768px) {
     .ProjectImage img {
         object-fit: cover;
-        width: auto;
+        width: 100%;
+        height: 100%;
         filter: grayscale(100%) contrast(1) brightness(80%);
     }
 }
