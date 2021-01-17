@@ -6,12 +6,13 @@ import classes from './ProjectCard.module.css'
 import MonoTextList from '../../../MonoTextList/MonoTextList'
 
 interface Props {
-    projectData: IProjectContent
+    projectData: IProjectContent,
+    showMore: boolean
 }
 
-const ProjectCard: React.FC<Props> = ({ projectData }) => {
+const ProjectCard: React.FC<Props> = ({ projectData, showMore }) => {
     return (
-        <article className={classes.ProjectCard}>
+        <article className={`${classes.ProjectCard} ${showMore ? "" : "fade-up"}`}>
             <div>
                 <header className={classes.ProjectCardHeader}>
                     <Folder className={classes.ProjectCardIcon} />
