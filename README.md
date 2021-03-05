@@ -29,8 +29,13 @@
   - Love anything that's related to JavaScript.
   - I’m currently looking for an opportunaty to work as a front-end developer.
   - Learning more about the fundimentals of data structure and algorithms.
+  <div>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=karimshalapy&theme=dark" />
+  </div>
 
 </div> 
+  
+
 </div>
 
 <div>
