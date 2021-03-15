@@ -1,0 +1,54 @@
+.TabButton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: var(--tab-height);
+    padding: 0 20px 2px;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    color: var(--text-color);
+    white-space: nowrap;
+    border-left: 2px solid var(--lightest-theme-color);
+    background-color: transparent;
+    cursor: pointer;
+    transition: var(--transition);
+}
+@media (max-width: 768px) {
+    .TabButton {
+        padding: 0 15px 2px;
+    }
+}
+@media (max-width: 600px) {
+    .TabButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--tab-width);
+        min-width: var(--tab-width);
+        white-space: normal;
+        padding: 0 15px;
+        border-left: 0;
+        border-bottom: 2px solid var(--lightest-theme-color);
+        text-align: center;
+    }
+}
+
+.TabButton:hover,
+.TabButton:focus {
+    background-color: var(--light-theme-color);
+}
+.TabButton:hover,
+.TabButton:active,
+.TabButton:focus {
+    color: var(--highlight-color);
+    outline: 0;
+}
+
+
+.Active {
+    color: var(--highlight-color)
+}
