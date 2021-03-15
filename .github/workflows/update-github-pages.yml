@@ -1,0 +1,37 @@
+name: Update Github pages
+"on":
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+
+      - name: Create local changes
+        run: |
+          npm i
+          CI=false npm run build
+      
+      - name: Pushes to another repository
+        id: push_directory
+        uses: cpina/github-action-push-to-another-repository@cp_instead_of_deleting
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'build'
+          destination-github-username: 'karimshalapy'
+          destination-repository-name: 'karimshalapy.github.io'
+          user-email: actions@github.com
+          commit-message: See ORIGIN_COMMIT
+      - name: Test get variable exported by push-to-another-repository
+        run: echo $DESTINATION_CLONED_DIRECTORY
