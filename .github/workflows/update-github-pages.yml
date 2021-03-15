@@ -22,16 +22,12 @@ jobs:
           npm i
           CI=false npm run build
       
-      - name: Pushes to another repository
-        id: push_directory
-        uses: cpina/github-action-push-to-another-repository@cp_instead_of_deleting
+      - name: Publish
+        uses: selenehyun/gh-push@master
         env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: 'build'
-          destination-github-username: 'karimshalapy'
-          destination-repository-name: 'karimshalapy.github.io'
-          user-email: actions@github.com
-          commit-message: See ORIGIN_COMMIT
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          COMMIT_FILES: build/*
+          REPO_FULLNAME: karimshalapy/karimshalapy.github.io
+          BRANCH: main
       - name: Test get variable exported by push-to-another-repository
         run: echo $DESTINATION_CLONED_DIRECTORY
