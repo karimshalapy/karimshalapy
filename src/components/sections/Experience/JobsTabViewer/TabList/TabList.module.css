@@ -1,0 +1,23 @@
+.TabList {
+    position: relative;
+    z-index: 3;
+    width: max-content;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+@media (max-width: 600px) {
+    .TabList {
+        display: flex;
+        overflow-x: auto;
+        width: calc(100% + 100px);
+        margin-left: -50px;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 480px) {
+    .TabList {
+        width: calc(100% + 50px);
+        margin-left: -25px;
+    }
+}
