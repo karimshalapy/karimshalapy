@@ -16,7 +16,15 @@ export interface IProjectData {
     projectContent: IProjectContent,
     projectImage: IProjectImage
 }
-export interface IAllProjectsData {
+export interface IJobsDetails {
+    companyName: string,
+    companyUrl: string,
+    jobTitle: string,
+    range: string,
+    detailsList: string[]
+}
+export interface IAllAppData {
     projects: IProjectData[],
-    otherProjects: IProjectContent[]
+    otherProjects: IProjectContent[],
+    jobsDetails: IJobListDetails[]
 }

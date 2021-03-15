@@ -7,12 +7,12 @@ import Layout from './Layout/Layout';
 import ScrollReveal from 'scrollreveal'
 import { animateScroll as Scroll, scroller, Events } from 'react-scroll'
 import MainContext from './MainContext'
-import { IAllProjectsData } from './@types/Work';
+import { IAllAppData } from './@types/Work';
 import Loader from './components/Loader/Loader';
 import OtherProjects from './components/sections/OtherProjects/OtherProjects';
 
 const App = () => {
-  const [data, setData] = useState<IAllProjectsData>({ projects: [], otherProjects: [] })
+  const [data, setData] = useState<IAllAppData>({ projects: [], otherProjects: [], jobsDetails: [] })
   const [isLoading, setIsLoading] = useState(true)
 
   const setUpScrollReveal = () => {
@@ -41,7 +41,7 @@ const App = () => {
   const fetchData = () => {
     fetch("https://my-portfolio-dcec7-default-rtdb.firebaseio.com/.json")
       .then(res => res.json())
-      .then((data: IAllProjectsData) => {
+      .then((data: IAllAppData) => {
         setData(data)
       })
   }
@@ -56,7 +56,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <MainContext.Provider value={{ projects: data.projects, otherProjects: data.otherProjects }}>
+      <MainContext.Provider value={{ projects: data.projects, otherProjects: data.otherProjects, jobsDetails: data?.jobsDetails }}>
         {
           isLoading
             ?
