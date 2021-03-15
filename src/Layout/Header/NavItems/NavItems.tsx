@@ -11,7 +11,7 @@ const NavItems: React.FC<Props> = props => {
     return (
         <ol className={classes.NavList}>
             {
-                ["About", "Work", "Contact"]
+                ["About", "Experience", "Work", "Contact"]
                     .map(item => (
                         <li key={item} className={`${classes.NavListItem} ${!props.isInSideMenu ? "fade-down" : ""}`}>
                             <Link
