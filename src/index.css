@@ -54,7 +54,10 @@ html {
   background-color: var(--text-color);
   color: var(--lightest-text-color);
 }
-
+:focus {
+  outline: 2px dashed var(--highlight-color);
+  outline-offset: 3px;
+}
 
 body {
   margin: 0;
