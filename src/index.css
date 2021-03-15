@@ -171,8 +171,7 @@ a:focus,
 p {
   margin: 0 0 15px 0;
 }
-p:last-child,
-p:last-of-type {
+p:last-child {
   margin: 0;
 }
 p > code {
