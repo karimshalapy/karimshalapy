@@ -10,6 +10,7 @@ import MainContext from './MainContext'
 import { IAllAppData } from './@types/Work';
 import Loader from './components/Loader/Loader';
 import OtherProjects from './components/sections/OtherProjects/OtherProjects';
+import Experience from './components/sections/Experience/Experience';
 
 const App = () => {
   const [data, setData] = useState<IAllAppData>({ projects: [], otherProjects: [], jobsDetails: [] })
@@ -65,6 +66,7 @@ const App = () => {
             <Layout>
               <Hero />
               <About />
+              <Experience />
               <Work />
               <OtherProjects />
               <Contact />
