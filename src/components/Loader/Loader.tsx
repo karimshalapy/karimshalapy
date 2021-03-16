@@ -21,6 +21,7 @@ const Loader: React.FC<Props> = ({ finishAnimating }) => {
             document.body.classList.remove("hidden")
             clearTimeout(timeout)
         }
+        // eslint-disable-next-line
     }, [])
 
     return (
