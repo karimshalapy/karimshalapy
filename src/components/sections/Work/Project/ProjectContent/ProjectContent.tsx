@@ -25,16 +25,20 @@ const ProjectContent: React.FC<Props> = props => {
             </p>
             <MonoTextList data={props.projectContentData.techList} className={props.projectTechListClassName} />
             <div className={`${props.projectLinksClassName} ${classes.ProjectLinks}`}>
-                <IconLink
-                    aria-label={`${props.projectContentData.title} github repo`}
-                    href={props.projectContentData.projectLinks.github}
-                    iconType="Github"
-                />
-                <IconLink
-                    aria-label={`${props.projectContentData.title} live link`}
-                    href={props.projectContentData.projectLinks.live}
-                    iconType="External"
-                />
+                {props.projectContentData.projectLinks?.github ?
+                    <IconLink
+                        aria-label={`${props.projectContentData.title} github repo`}
+                        href={props.projectContentData.projectLinks.github}
+                        iconType="Github"
+                    /> : null
+                }
+                {props.projectContentData.projectLinks?.live ?
+                    <IconLink
+                        aria-label={`${props.projectContentData.title} live link`}
+                        href={props.projectContentData.projectLinks.live}
+                        iconType="External"
+                    /> : null
+                }
             </div>
         </div>
     )

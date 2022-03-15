@@ -19,7 +19,7 @@ const Project: React.FC<Props> = ({ projectData }) => {
             />
             <ProjectImage
                 projectImageClassName={classes.ProjectImage}
-                url={projectData.projectContent.projectLinks.live}
+                url={projectData.projectContent.projectLinks?.live}
                 projectImageData={projectData.projectImage}
             />
         </article>
