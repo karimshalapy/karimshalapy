@@ -17,9 +17,15 @@ const AboutMeContent: React.FC<Props> = props => {
                 <li>JavaScript (ES6+)</li>
                 <li>TypeScript</li>
                 <li>HTML &amp; (S)CSS</li>
+                <li>Tailwind</li>
                 <li>React</li>
+                <li>Vue</li>
+                <li>Next</li>
+                <li>Nuxt</li>
+                <li>Astro</li>
+                <li>Apollo/Client</li>
                 <li>Firebase</li>
-                <li>Node.js</li>
+                <li>LaTeX</li>
             </ul>
         </div>
     )
