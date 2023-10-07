@@ -27,8 +27,8 @@
 
   - Graduated from Engineering college and shifted my career to become a front-end developer.
   - Love anything that's related to JavaScript.
-  - I’m currently looking for an opportunaty to work as a front-end developer.
-  - Learning more about the fundimentals of data structure and algorithms.
+  - I’m currently working as a front-end developer.
+  - Striving to find an opportunity to relocate outside of Egypt.
   <div>
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=karimshalapy&theme=dark" />
   </div>
