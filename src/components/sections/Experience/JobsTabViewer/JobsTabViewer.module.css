@@ -1,9 +1,0 @@
-.JobsTabViewer {
-    display: flex;
-}
-@media (max-width: 600px) {
-    .JobsTabViewer{
-        display: block;
-
-    }
-}
